@@ -1,11 +1,11 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Button } from 'react-bootstrap';
 
 function LoginOut(props) {
     
     return (
         <Row>
-         
+         <Button href="#/login">Login</Button>
         </Row>
     );
 }
