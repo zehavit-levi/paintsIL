@@ -14,13 +14,15 @@ import ActiveUserContext from './shared/ActiveUserContext';
 import { useState } from 'react';
 function App() {
   const [activeUser, setActiveUser] = useState();
+  const [isCreator, setIsCreator] = useState(undefined);
+  console.log(isCreator);
   return (
     <ActiveUserContext.Provider value={activeUser} >
       <HashRouter>
         <Switch>
-          <Route exact path="/" ><WellcomePage /></Route>
+          {isCreator !== undefined? <Route exact path="/signup" ><SignUpPage isCreator={isCreator}/></Route> : null}
+          <Route exact path="/" ><WellcomePage setIsCreator={setIsCreator}/></Route>
           <Route exact path="/login" component={LoginPage}></Route>
-          <Route exact path="/signup" ><SignUpPage /></Route>
           <Route exact path="/home" ><HomePage /></Route>
           <Route exact path="/creator"><ShowCreatorDetailsPage /></Route>
           <Route exact path="/manage"><CreatorManagePage /></Route>
