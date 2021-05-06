@@ -10,12 +10,12 @@ import BuyerSavedPaintsPage from './pages/BuyerSavedPaintsPage/BuyerSavedPaintsP
 import CreationDetailsPage from './pages/CreationDetailsPage/CreationDetailsPage';
 import CreatorNewPaintPage from './pages/CreatorNewPaintPage/CreatorNewPaintPage';
 import CreatorDetailsPage from './pages/CreatorDetailsPage/CreatorDetailsPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ActiveUserContext from './shared/ActiveUserContext';
 import { useState } from 'react';
 function App() {
   const [activeUser, setActiveUser] = useState();
   const [isCreator, setIsCreator] = useState(undefined);
-  console.log(isCreator);
   return (
     <ActiveUserContext.Provider value={activeUser} >
       <HashRouter>
