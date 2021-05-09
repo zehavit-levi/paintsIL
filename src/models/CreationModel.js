@@ -1,22 +1,19 @@
 export default class CreationModel {
-    constructor({name,images, price, creationDate, dimentions, story, colorTypes}) {
-        this.name = name;
-        this.images = images;
-        this.img = images[0];
-        if(images.length > 1){
-            this.additionalImg1 = images[1];
-        }
-        if(images.length > 2){
-            this.additionalImg2 = images[2];
-        }
-        this.price = price;
-        this.creationDate = creationDate;
-        this.width = dimentions[0];
-        this.height = dimentions[1];
-        if(dimentions.length > 2){
-            this.density = dimentions[2];
-        }
-        this.story = story;
-        this.colorTypes = colorTypes;
+    constructor(result) {
+        this.id = result.id;
+        this.name = result.get("name");
+        this.img = result.get("img").url();
+        if(result.get("additionalImg1") !== undefined) this.additionalImg1 = result.get("additionalImg1").url();
+        if(result.get("additionalImg2") !== undefined) this.additionalImg2 = result.get("additionalImg2").url();
+        this.price = result.get("price");
+        if(result.get("creationDate") !== undefined) this.creationDate = result.get("creationDate");
+        this.width = result.get("width");
+        this.height = result.get("height");
+        if(result.get("density") !== undefined) this.density =  result.get("density");
+        if(result.get("this.story") !== undefined) this.story = result.get("story");
+        this.colorsTypes = result.get("colorsTypes");
+        this.creatorId = result.get("creatorId");
     }
+
+
 }
