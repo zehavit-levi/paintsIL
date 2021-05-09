@@ -1,4 +1,31 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url("../../assets/fonts/gan/ganclm_bold-webfont.ttf");
+  }
 .p-wellcome{
-    text-align: right;
+    font-family: myFirstFont;
+    text-align: center;
     direction: rtl;
+    height: 100vh;
+    background: url('../../assets/images/pexels-deeana-creates-1646953.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.p-wellcome > .p-text-content {
+  background-color: rgb(255, 255, 255,0.2);
+  border-radius: 2.25rem;
+ 
+}
+.eng{
+    font-family: 'Goblin One', cursive;
+}
+
+.wellcome-bg{
+    width: 100%;
+}
+.p-wellcome > .signup-buttons{
+display: flex;
+justify-content: center;
 }
