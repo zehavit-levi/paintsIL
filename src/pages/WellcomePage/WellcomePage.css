@@ -7,7 +7,7 @@
     text-align: center;
     direction: rtl;
     height: 100vh;
-    background: url('../../assets/images/pexels-deeana-creates-1646953.jpg') no-repeat center center fixed; 
+    background: url('../../assets/images/pawel-czerwinski-OG44d93iNJk-unsplash.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -16,7 +16,6 @@
 .p-wellcome > .p-text-content {
   background-color: rgb(255, 255, 255,0.2);
   border-radius: 2.25rem;
- 
 }
 .eng{
     font-family: 'Goblin One', cursive;
