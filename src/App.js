@@ -22,7 +22,7 @@ function App() {
         <Switch>
           {isCreator !== undefined? <Route exact path="/signup" ><SignUpPage isCreator={isCreator}/></Route> : null}
           <Route exact path="/" ><WellcomePage setIsCreator={setIsCreator}/></Route>
-          <Route exact path="/login" component={LoginPage}></Route>
+          <Route exact path="/login" component={LoginPage}><LoginPage onLogin={user => setActiveUser(user)}/></Route>
           <Route exact path="/home" ><HomePage /></Route>
           <Route exact path="/creator"><ShowCreatorDetailsPage /></Route>
           <Route exact path="/manage"><CreatorManagePage /></Route>
