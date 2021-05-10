@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react';
 import Parse from 'parse';
-import { Alert, Button, Form } from 'react-bootstrap';
+import { Alert, Button, Container, Form } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import ActiveUserContext from '../../shared/ActiveUserContext';
 import UserModel from '../../models/UserModel';
+import './LoginPage.css'
+import MyButton from '../../components/MyButton/MyButton';
+
 
 function LoginPage({ onLogin }) {
     const [email, setEmail] = useState("");
@@ -26,29 +29,28 @@ function LoginPage({ onLogin }) {
         }
     }
     return (
-        <div className="p-login">
-            <h1>In LoginPage</h1>
-            <p>or <Link to="/signup">create an account</Link></p>
-            {showInvalidLogin ? <Alert variant="danger">Invalid Credentials!</Alert> : null}
-            <Form onSubmit={login}>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email"
-                        value={email} onChange={e => setEmail(e.target.value)} />
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password"
-                        value={pwd} onChange={e => setPwd(e.target.value)} />
-                </Form.Group>
-                <Button variant="success" type="submit" block>
-                    Login
+        <Container  className="bg-p-login">
+            <div className="p-login col-md-10 col-lg-6">
+                <h1 class="p-login-title">כניסה לאתר</h1>
+                <p class="p-login-title">או <Link to="/">הרשמה לאתר</Link></p>
+                {showInvalidLogin ? <Alert variant="danger">Invalid Credentials!</Alert> : null}
+                <Form className="form-login" onSubmit={login}>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label className="eng">Email</Form.Label>
+                        <Form.Control className="eng" type="email" placeholder="Email"
+                            value={email} onChange={e => setEmail(e.target.value)} />
+                    </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>סיסמה</Form.Label>
+                        <Form.Control type="password" placeholder="סיסמה"
+                            value={pwd} onChange={e => setPwd(e.target.value)} />
+                    </Form.Group>
+                    <Button className="submit-btn-login" type="submit" block>
+                    כניסה
                 </Button>
-            </Form>
-        </div>
+                </Form>
+            </div>
+        </Container>
     );
 }
 
