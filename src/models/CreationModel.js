@@ -13,6 +13,8 @@ export default class CreationModel {
         if(result.get("this.story") !== undefined) this.story = result.get("story");
         this.colorsTypes = result.get("colorsTypes");
         this.creatorId = result.get("creatorId");
+        this.saved = result.get("saved");
+        this.watched = result.get("watched");
     }
 
 

@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/creator"><ShowCreatorDetailsPage /></Route>
           <Route exact path="/manage"><CreatorManagePage /></Route>
           <Route exact path="/saved"><BuyerSavedPaintsPage /></Route>
-          <Route exact path="/creation"><CreationDetailsPage /></Route>
+          <Route exact path="/creation/:index"><CreationDetailsPage /></Route>
           <Route exact path="/newpaint"><CreatorNewPaintPage /></Route>
           <Route exact path="/update-details"><CreatorDetailsPage /></Route>
         </Switch>
