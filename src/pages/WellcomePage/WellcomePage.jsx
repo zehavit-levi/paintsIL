@@ -9,7 +9,6 @@ function WellcomePage(props) {
     return (
 
         <Container className="p-wellcome">
-
             <div className="p-text-content">
                 <MyButton href="/login" text="כניסה" />
                 <p><h2>ברוכים הבאים לאתר</h2></p>
