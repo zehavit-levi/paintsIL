@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ActiveUserContext from '../../shared/ActiveUserContext';
-import Parse from 'parse';
-import UserModel from '../../models/UserModel';
+import { Card} from 'react-bootstrap';
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import ImgCard from '../../components/ImgCard/ImgCard';
 
 function HomePage(props) {
     const [paints, setPaints] = useState([]);
     const activeUser = useContext(ActiveUserContext);
-    
+
     useEffect(() => {
         async function fetchData() {
             const PaintsToShow = await activeUser.getPaints();
@@ -16,20 +17,36 @@ function HomePage(props) {
             fetchData();
         }
     }, [activeUser])
-    
+
+    const paintsShowCreator = paints.map(paint => {
+        return (
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={paint.img}/>
+            </Card>
+        )
+    });
+  
+
+    const paintsShowBuyer = paints.map((paint, index) => <ImgCard key={index} paint={paint} index={paint.name}/>);
+
     return (
 
         <div>
-            <h1>In HomePage</h1>
             {activeUser && activeUser.isCreator ?
-                <>
-                <h2>creator</h2>
-                {paints.map(paint => <img src={paint.img} alt=""></img>)}
-                </> :
-                <>
-                <h2> buyer</h2>
-                {paints.map(paint => <img src={paint.img} alt=""></img>)}
-                </>
+                <ResponsiveMasonry
+                    columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+                    <Masonry>
+                        {paintsShowCreator}
+                    </Masonry>
+                </ResponsiveMasonry>
+                :
+                <ResponsiveMasonry
+                    columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+                    <Masonry>
+                        {paintsShowBuyer}
+                    </Masonry>
+                </ResponsiveMasonry>
+               
             }
         </div>
     );
