@@ -1,0 +1,12 @@
+.navbar-collapse {
+    justify-content: space-between;
+}
+
+.form-filter{
+    display: flex;
+}
+.buyer-navbar{
+  font-family: myFirstFont;
+  text-align: right;
+  direction: rtl;
+}
