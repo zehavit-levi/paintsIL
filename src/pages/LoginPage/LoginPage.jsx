@@ -1,14 +1,12 @@
 import React, { useContext, useState } from 'react';
-import Parse from 'parse';
 import { Alert, Button, Container, Form } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import ActiveUserContext from '../../shared/ActiveUserContext';
 import UserModel from '../../models/UserModel';
-import './LoginPage.css'
-import MyButton from '../../components/MyButton/MyButton';
+import './LoginPage.css';
 
 
-function LoginPage({ onLogin }) {
+function LoginPage({ onLogin}) {
     const [email, setEmail] = useState("");
     const [pwd, setPwd] = useState("");
     const [showInvalidLogin, setShowInvalidLogin] = useState(false);
@@ -31,8 +29,8 @@ function LoginPage({ onLogin }) {
     return (
         <Container  className="bg-p-login">
             <div className="p-login col-md-10 col-lg-6">
-                <h1 class="p-login-title">כניסה לאתר</h1>
-                <p class="p-login-title">או <Link to="/">הרשמה לאתר</Link></p>
+                <h1 className="p-login-title">כניסה לאתר</h1>
+                <p className="p-login-title">או <Link to="/">הרשמה לאתר</Link></p>
                 {showInvalidLogin ? <Alert variant="danger">Invalid Credentials!</Alert> : null}
                 <Form className="form-login" onSubmit={login}>
                     <Form.Group controlId="formBasicEmail">
