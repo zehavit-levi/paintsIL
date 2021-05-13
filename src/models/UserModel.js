@@ -11,7 +11,7 @@ export default class UserModel {
         this.colorTypes = parseUser.get("colorsTypes");
         this.trends = parseUser.get("trends");
         this.privateOrders = parseUser.get("privateOrders");
-        this.userName = parseUser.get("userName");
+        this.username = parseUser.get("username") ? parseUser.get("username") : this.fName + " " + this.lName;
         this.site = parseUser.get("site");
         this.story = parseUser.get("story");
         this.occupation = parseUser.get("occupation");
@@ -22,7 +22,7 @@ export default class UserModel {
     }
 
     static activeUser = null;
-    static paints = null;
+    static paints = [];
 
     static async login(email, pwd) {
         const parseUser = await Parse.User.logIn(email, pwd);
@@ -35,10 +35,22 @@ export default class UserModel {
         const query = new Parse.Query(Paint);
         if (UserModel.activeUser.isCreator) {
             query.equalTo("creatorId", UserModel.activeUser.id);
+            const parsePaints = await query.find();
+            UserModel.paints = parsePaints.map(parsePaint => new CreationModel(parsePaint));
+            return UserModel.paints;
         }
         const parsePaints = await query.find();
-        UserModel.paints = parsePaints.map(parsePaint => new CreationModel(parsePaint));
-        return UserModel.paints;
+        console.log(parsePaints.length);
+
+        //const paints = parsePaints.map(parsePaint => new CreationModel(parsePaint));
+        
+            const parsePaintRandom = [];
+            for(let i=0;(parsePaints.length > 20 && i<20) || i<4;i++){
+                const parseRandom = parsePaints[parsePaints.length * Math.random() | 0];
+                parsePaintRandom === [] || !parsePaintRandom.includes(parseRandom)  ? parsePaintRandom.push(parseRandom) : i--;
+            }
+            UserModel.paints = parsePaintRandom.map(parsePaint => new CreationModel(parsePaint));
+            return UserModel.paints;
     }
 
     async getSavedPaints() {
@@ -47,9 +59,9 @@ export default class UserModel {
         const query = new Parse.Query(Paint);
         query.containedIn("objectId", UserModel.activeUser.savedPaints)
         const parsePaints = await query.find();
-        UserModel.paints = parsePaints.map(parsePaint => new CreationModel(parsePaint));
+        const savedPaints = parsePaints.map(parsePaint => new CreationModel(parsePaint));
 
-        return UserModel.paints;
+        return savedPaints;
     }
 
     async getFilterdPaints(filterText,filterBy){
