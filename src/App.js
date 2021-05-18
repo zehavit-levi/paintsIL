@@ -16,7 +16,6 @@ import { useState } from 'react';
 function App() {
   const [activeUser, setActiveUser] = useState();
   const [isCreator, setIsCreator] = useState(undefined);
-  const [paints,setPaints] = useState([]);
   return (
     <ActiveUserContext.Provider value={activeUser} >
       <HashRouter>
@@ -24,10 +23,10 @@ function App() {
           {isCreator !== undefined? <Route exact path="/signup" ><SignUpPage isCreator={isCreator}/></Route> : null}
           <Route exact path="/" ><WellcomePage setIsCreator={setIsCreator}/></Route>
           <Route exact path="/login" component={LoginPage}><LoginPage onLogin={user => setActiveUser(user) } /></Route>
-          <Route exact path="/home" ><HomePage setPaints ={setPaints} paints={paints}/></Route>
+          <Route exact path="/home" ><HomePage /></Route>
           <Route exact path="/creator"><ShowCreatorDetailsPage /></Route>
           <Route exact path="/manage"><CreatorManagePage /></Route>
-          <Route exact path="/saved"><BuyerSavedPaintsPage setPaints ={setPaints} paints={paints}/></Route>
+          <Route exact path="/saved"><BuyerSavedPaintsPage /></Route>
           <Route exact path="/creation/:index"><CreationDetailsPage /></Route>
           <Route exact path="/newpaint"><CreatorNewPaintPage /></Route>
           <Route exact path="/update-details"><CreatorDetailsPage /></Route>
