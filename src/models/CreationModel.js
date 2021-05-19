@@ -1,8 +1,10 @@
 import Parse from 'parse';
+import ColorType from './ColorType';
 import UserModel from './UserModel';
 export default class CreationModel {
     constructor(result) {
         this.id = result.id;
+        this.createdAt = JSON.stringify(result.createdAt);
         this.name = result.get("name");
         this.img = result.get("img").url();
         if (result.get("additionalImg1")) this.additionalImg1 = result.get("additionalImg1").url();
@@ -26,12 +28,8 @@ export default class CreationModel {
         query.get(this.id).then((object) => {
             object.set('saved', this.saved + 1);
             object.save().then((response) => {
-                // You can use the "get" method to get the value of an attribute
-                // Ex: response.get("<ATTRIBUTE_NAME>")
-                if (typeof document !== 'undefined') console.log(`Updated : ${JSON.stringify(response)}`);
                 console.log('Updated ', response);
             }, (error) => {
-                if (typeof document !== 'undefined') console.log(`Error while updating : ${JSON.stringify(error)}`);
                 console.error('Error while updating ', error);
             });
         });
@@ -44,17 +42,20 @@ export default class CreationModel {
         query.get(this.id).then((object) => {
             object.set('watched', this.watched + 1);
             object.save().then((response) => {
-                // You can use the "get" method to get the value of an attribute
-                // Ex: response.get("<ATTRIBUTE_NAME>")
-                if (typeof document !== 'undefined') console.log(`Updated : ${JSON.stringify(response)}`);
                 console.log('Updated ', response);
             }, (error) => {
-                if (typeof document !== 'undefined') console.log(`Error while updating : ${JSON.stringify(error)}`);
                 console.error('Error while updating ', error);
             });
         });
     }
-
+    static async getPaint(index){
+        const Paint = Parse.Object.extend('Paint');
+        const query = new Parse.Query(Paint);
+        query.equalTo("objectId", index);
+        const parsePaints = await query.find();
+        const paints = parsePaints.map(parsePaint => new CreationModel(parsePaint));
+        return paints[0];
+    }
     async getCreator(){
         const User = Parse.Object.extend('User');
         const query = new Parse.Query(User);
@@ -65,5 +66,19 @@ export default class CreationModel {
         return creators[0];
     }
 
+    async getColorsTypes(){
+        const colorType = Parse.Object.extend('colorType');
+        const query = new Parse.Query(colorType);
+        console.log(this.colorsTypes);
+        // let types = [];
+        // for(let i=0; i< Object.values(this.colorsTypes).length; i++){
+        //     query.equalTo("objectId",Object.values(this.colorsTypes)[i]);
+        //     const parseColorsTypes = await query.find();
+        // }
+        query.containedIn("objectId",Object.values(this.colorsTypes));
+        const parseColorsTypes = await query.find();
+        const types = parseColorsTypes.map(type => new ColorType(type));
+        return types;
+    }
 
 }
