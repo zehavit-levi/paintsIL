@@ -43,13 +43,13 @@ function HomePage() {
     }) : null;
 
 
-    const paintsShowBuyer = paints && !filterText ? paints.map((paint, index) => <ImgCard key={index} paint={paint} index={paint.id} />) :
+    const paintsShowBuyer = paints && !filterText ? paints.map((paint, index) => <ImgCard className="img-card" key={index} paint={paint} index={paint.id} />) :
         paints && filterdPaints ? filterdPaints.map((paint, index) => <ImgCard className="img-card" key={index} paint={paint} index={paint.id} />) : null;
 
 
     return (
 
-        <div>
+        <Container className="p-homepage">
             {activeUser && activeUser.isCreator && paints ?
 
                 <ResponsiveMasonry
@@ -61,7 +61,7 @@ function HomePage() {
 
                 : paints ?
                     <Container>
-                        <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} />
+                        <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} page="home"/>
                         <ResponsiveMasonry
                             columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
                             <Masonry>
@@ -71,7 +71,7 @@ function HomePage() {
                     </Container> : null
 
             }
-        </div>
+        </Container>
     );
 }
 
