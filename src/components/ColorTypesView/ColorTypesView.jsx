@@ -1,4 +1,4 @@
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Container } from 'react-bootstrap';
 
 function ColorTypesView(props) {
     
@@ -6,22 +6,23 @@ function ColorTypesView(props) {
         return(
         <Carousel.Item key= {index}>
                     <img 
-                        className="d-block w-100"
+                        style={{width:"100%", opacity:"0.7", border: "2px inset"}}
                         src={colorType.img}
                         alt="First slide"
+
                     />
-                    <Carousel.Caption>
-                        <h4>{colorType.name}</h4>
+                    <Carousel.Caption >
+                        <h4 style={{color:"black"}}>{colorType.name}</h4>
                     </Carousel.Caption>
                 </Carousel.Item>
         )
     })
     return (
-        <div>
+        <Container className="carouselContainer">
             <Carousel fade>
                 {items ?  items : null}
             </Carousel>
-        </div>
+        </Container>
     );
 }
 
