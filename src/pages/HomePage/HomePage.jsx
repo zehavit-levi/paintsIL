@@ -5,23 +5,23 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import ImgCard from '../../components/ImgCard/ImgCard';
 import BuyerNavBar from '../../components/BuyerNavBar/BuyerNavBar';
 import './HomePage.css';
-import UserModel from '../../models/UserModel';
 
-function HomePage(props) {
+function HomePage() {
     const [filterText, setFilterText] = useState();
-    const [filterBy, setFilterBy] = useState("fName");
-    const [filterdPaints, setFilterdPaint] = useState()
+    const [filterBy, setFilterBy] = useState("userName");
+    const [filterdPaints, setFilterdPaint] = useState();
+    const [paints, setPaints] = useState([]);
     const activeUser = useContext(ActiveUserContext);
-    
+
     useEffect(() => {
         async function fetchData() {
             const paintsToSet = await activeUser.getPaints();
-            props.setPaints(paintsToSet);
+            setPaints(paintsToSet);
         }
         if (activeUser) {
             fetchData();
         }
-    }, [activeUser,props])
+    }, [activeUser])
 
     useEffect(() => {
         async function fetchData() {
@@ -31,10 +31,10 @@ function HomePage(props) {
         if (activeUser) {
             fetchData();
         }
-    }, [filterText, filterBy,activeUser])
+    }, [filterText, filterBy, activeUser])
 
 
-    const paintsShowCreator = props.paints ? props.paints.map(paint => {
+    const paintsShowCreator = paints ? paints.map(paint => {
         return (
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={paint.img} />
@@ -43,14 +43,14 @@ function HomePage(props) {
     }) : null;
 
 
-    const paintsShowBuyer = props.paints && !filterText ? props.paints.map((paint, index) => <ImgCard key={index} paint={paint} index={index} />):
-    props.paints && filterdPaints ? filterdPaints.map((paint, index) => <ImgCard className="img-card" key={index} paint={paint} index={index} />) : null;
-    
+    const paintsShowBuyer = paints && !filterText ? paints.map((paint, index) => <ImgCard key={index} paint={paint} index={paint.id} />) :
+        paints && filterdPaints ? filterdPaints.map((paint, index) => <ImgCard className="img-card" key={index} paint={paint} index={paint.id} />) : null;
+
 
     return (
 
         <div>
-            {activeUser && activeUser.isCreator && props.paints ?
+            {activeUser && activeUser.isCreator && paints ?
 
                 <ResponsiveMasonry
                     columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
@@ -59,7 +59,7 @@ function HomePage(props) {
                     </Masonry>
                 </ResponsiveMasonry>
 
-                : props.paints ?
+                : paints ?
                     <Container>
                         <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} />
                         <ResponsiveMasonry
