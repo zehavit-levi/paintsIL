@@ -25,17 +25,11 @@ function BuyerNavBar(props) {
                         </div>
                         <div className="select-container col-md-6 col-12">
                             <Form.Control value={props.filterBy} as="select" onChange={(e) => props.setFilterBy(e.target.value)}>
-                                <option value="fName">שם פרטי של האומן</option>
-                                <option value="lName">שם משפחה של האומן</option>
+                                <option value="username">שם האומן</option>
                                 <option value="creationName">שם היצירה</option>
                                 <option value="size">גודל</option>
                             </Form.Control>
                         </div>
-                        {/* <div className="search-btn" >
-                            <Form.Control>
-                                <button onClick={() =>props.onClick()}>חפש</button>
-                            </Form.Control>
-                        </div> */}
                     </Row>
                 </Form>
             </Navbar.Collapse>
