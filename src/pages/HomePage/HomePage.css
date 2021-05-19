@@ -1,3 +1,6 @@
 .img-card:hover{
     cursor: grab;
 }
+.img-card{
+    margin:10px;
+}
