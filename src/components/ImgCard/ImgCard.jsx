@@ -8,7 +8,7 @@ function ImgCard({paint,index}) {
         return <Redirect to={'/creation/' + redirectTo}/>
     }
     return (
-        <Card className="img-card" onDoubleClick={() => console.log(paint)}
+        <Card className="img-card" 
             onClick={() => setRedirectTo(index)}>
             <Image src={paint.img} ></Image>
         </Card>
