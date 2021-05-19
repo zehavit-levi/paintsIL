@@ -2,10 +2,10 @@ import { Carousel } from 'react-bootstrap';
 
 function ColorTypesView(props) {
     
-    const items = props.types.map(colorType => {
+    const items = props.types.map((colorType,index) => {
         return(
-        <Carousel.Item>
-                    <img
+        <Carousel.Item key= {index}>
+                    <img 
                         className="d-block w-100"
                         src={colorType.img}
                         alt="First slide"
