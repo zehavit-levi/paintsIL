@@ -6,7 +6,7 @@ export default class UserModel {
         this.id = parseUser.id;
         this.fName = parseUser.get("fName");
         this.lName = parseUser.get("lName");
-        this.email = parseUser.get("email");
+        this.email = parseUser.get("email2");
         this.phone = parseUser.get("phone");
         this.colorTypes = parseUser.get("colorsTypes");
         this.trends = parseUser.get("trends");
