@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/paintsIL/static/css/main.b11d5d05.chunk.css",
+    "main.js": "/paintsIL/static/js/main.93ac31ff.chunk.js",
+    "main.js.map": "/paintsIL/static/js/main.93ac31ff.chunk.js.map",
+    "runtime-main.js": "/paintsIL/static/js/runtime-main.76e8331d.js",
+    "runtime-main.js.map": "/paintsIL/static/js/runtime-main.76e8331d.js.map",
+    "static/css/2.800be05e.chunk.css": "/paintsIL/static/css/2.800be05e.chunk.css",
+    "static/js/2.5462547e.chunk.js": "/paintsIL/static/js/2.5462547e.chunk.js",
+    "static/js/2.5462547e.chunk.js.map": "/paintsIL/static/js/2.5462547e.chunk.js.map",
+    "static/js/3.1a02a8e3.chunk.js": "/paintsIL/static/js/3.1a02a8e3.chunk.js",
+    "static/js/3.1a02a8e3.chunk.js.map": "/paintsIL/static/js/3.1a02a8e3.chunk.js.map",
+    "index.html": "/paintsIL/index.html",
+    "static/css/2.800be05e.chunk.css.map": "/paintsIL/static/css/2.800be05e.chunk.css.map",
+    "static/css/main.b11d5d05.chunk.css.map": "/paintsIL/static/css/main.b11d5d05.chunk.css.map",
+    "static/js/2.5462547e.chunk.js.LICENSE.txt": "/paintsIL/static/js/2.5462547e.chunk.js.LICENSE.txt",
+    "static/media/WellcomePage.css": "/paintsIL/static/media/pawel-czerwinski-OG44d93iNJk-unsplash.7e061c73.jpg",
+    "static/media/LoginPage.css": "/paintsIL/static/media/pexels-deeana-creates-1646953.5c7ea02c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76e8331d.js",
+    "static/css/2.800be05e.chunk.css",
+    "static/js/2.5462547e.chunk.js",
+    "static/css/main.b11d5d05.chunk.css",
+    "static/js/main.93ac31ff.chunk.js"
+  ]
+}
