@@ -10,3 +10,20 @@
   text-align: right;
   direction: rtl;
 }
+.eng{
+  font-family: 'Goblin One', cursive;
+  font-size: 1.5rem;
+
+}
+.mr-auto{
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+ .home::after{
+  padding: 10px;
+  font-size: 1.5rem;
+}
+.saved::after{
+  padding: 5px;
+  font-size: 1.5rem;
+}
