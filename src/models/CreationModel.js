@@ -22,11 +22,11 @@ export default class CreationModel {
     }
 
     async setSaved() {
+        this.saved = this.saved + 1;
         const Paint = Parse.Object.extend('Paint');
         const query = new Parse.Query(Paint);
-        // here you put the objectId that you want to update
         query.get(this.id).then((object) => {
-            object.set('saved', this.saved + 1);
+            object.set('saved', this.saved);
             object.save().then((response) => {
                 console.log('Updated ', response);
             }, (error) => {
@@ -36,11 +36,11 @@ export default class CreationModel {
     }
 
     async setWatched() {
+        this.watched = this.watched + 1;
         const Paint = Parse.Object.extend('Paint');
         const query = new Parse.Query(Paint);
-        // here you put the objectId that you want to update
         query.get(this.id).then((object) => {
-            object.set('watched', this.watched + 1);
+            object.set('watched', this.watched);
             object.save().then((response) => {
                 console.log('Updated ', response);
             }, (error) => {
@@ -70,11 +70,6 @@ export default class CreationModel {
         const colorType = Parse.Object.extend('colorType');
         const query = new Parse.Query(colorType);
         console.log(this.colorsTypes);
-        // let types = [];
-        // for(let i=0; i< Object.values(this.colorsTypes).length; i++){
-        //     query.equalTo("objectId",Object.values(this.colorsTypes)[i]);
-        //     const parseColorsTypes = await query.find();
-        // }
         query.containedIn("objectId",Object.values(this.colorsTypes));
         const parseColorsTypes = await query.find();
         const types = parseColorsTypes.map(type => new ColorType(type));
