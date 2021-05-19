@@ -3,3 +3,12 @@
     direction: rtl;
     font-family: myFirstFont;
 }
+
+.paint{
+    width: 100%;
+}
+
+.paint-name{
+    font-size: 2em;
+    margin-bottom: 10px;
+}

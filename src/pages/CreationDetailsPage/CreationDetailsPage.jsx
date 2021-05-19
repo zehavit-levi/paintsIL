@@ -1,8 +1,9 @@
 import { Button } from 'bootstrap';
 import React, { useContext, useEffect, useState } from 'react';
-import { Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import { Redirect, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import BuyerNavBar from '../../components/BuyerNavBar/BuyerNavBar';
 import ColorTypesView from '../../components/ColorTypesView/ColorTypesView';
 import CreationModel from '../../models/CreationModel';
 import ActiveUserContext from '../../shared/ActiveUserContext';
@@ -51,31 +52,21 @@ function CreationDetailsPage(props) {
     }
     return (
         <Container className="p-creation-details">
-            <Navbar className="buyer-navbar" bg="light" expand="lg">
-                <Navbar.Brand href="/">PaintsIL</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto col-lg-6">
-                        <Nav.Link href="#home">עמוד הבית</Nav.Link>
-                        <Nav.Link href="#saved">התמונות ששמרתי</Nav.Link>
-                    </Nav>
-
-                </Navbar.Collapse>
-            </Navbar>
+            <BuyerNavBar />
             {paint ?
                 <>
                     <Row>
-                        <Col md="6">
-                            <h1>שם היצירה : {paint.name}</h1>
+                        <Col className="paint-name" md="6">
+                            שם היצירה : {paint.name}
                         </Col>
                         <Col md="2">
-                            <h3>רוחב: {paint.width}</h3>
+                           רוחב: {paint.width}
                         </Col>
                         <Col md="2">
-                            <h3>אורך: {paint.height}</h3>
+                            אורך: {paint.height}
                         </Col>
                         <Col md="2">
-                            {paint.density ? <h3>עובי: {paint.density}</h3> : null}
+                            {paint.density ?<> עובי: {paint.density}</>: null}
                         </Col>
                     </Row>
                     <Row>
@@ -88,14 +79,43 @@ function CreationDetailsPage(props) {
                             <>
                                 <Row>חומרים: </Row>
                                 <Row>
-                                    <ColorTypesView types={colorsTypes} />
+                                    <Col md="4">
+                                    <ColorTypesView  types={colorsTypes} />
+                                    </Col>
                                 </Row>
                             </> : null}
                             <Row>מחיר: {paint.price}</Row>
                             {paint.story ? <Row>תמה: {paint.story}</Row> : null}
                         </Col>
                         <Col md="6">
-                            <Image src={paint.img}></Image>
+                            {paint.additionalImg1 || paint.additionalImg2 ? 
+                            <Carousel>
+                            <Carousel.Item >
+                              <img
+                                className="d-block w-100"
+                                src={paint.img}
+                                alt="First slide"
+                              />
+                            </Carousel.Item>
+                            {paint.additionalImg1 ? 
+                            <Carousel.Item>
+                              <img
+                                className="d-block w-100"
+                                src={paint.additionalImg1}
+                                alt="Second slide"
+                              />
+                            </Carousel.Item> : null}
+                            {paint.additionalImg2? 
+                            <Carousel.Item>
+                              <img
+                                className="d-block w-100"
+                                src={paint.additionalImg2}
+                                alt="Third slide"
+                              />
+                            </Carousel.Item> : null}
+                          </Carousel>
+                            :
+                            <Image className="paint" src={paint.img}></Image>}
                         </Col>
                     </Row>
                     <Row>
