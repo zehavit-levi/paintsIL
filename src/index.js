@@ -11,9 +11,7 @@ Parse.initialize(
   'RXHI6S4G631KP66jgzwcgqqNnDQSYwScuyNXr90g' // This is your Javascript key
 );
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
