@@ -4,8 +4,8 @@ import UserModel from './UserModel';
 export default class CreationModel {
     constructor(result) {
         this.id = result.id;
-        const date = new Date(JSON.parse(JSON.stringify(result.createdAt)));
-        this.createdAt = date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear();
+        const date = new Date(JSON.stringify(result.createdAt).split('T')[0].replace('"',""));
+        this.createdAt = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
         this.name = result.get("name");
         this.img = result.get("img").url();
         if (result.get("additionatImg1")) this.additionalImg1 = result.get("additionatImg1").url();
@@ -15,7 +15,7 @@ export default class CreationModel {
         this.width = result.get("width");
         this.height = result.get("height");
         if (result.get("density") !== undefined) this.density = result.get("density");
-        if (result.get("this.story") !== undefined) this.story = result.get("story");
+        if (result.get("story") !== undefined) this.story = result.get("story");
         this.colorsTypes = result.get("colorsTypes");
         this.creatorId = result.get("creatorId");
         this.saved = result.get("saved");
