@@ -50,6 +50,13 @@ function CreationDetailsPage(props) {
         activeUser.setSavedPaints(paint.id);
         }
     }
+
+    const removePaint = () =>{
+        if(activeUser.savedPaints.includes(paint.id)){
+            paint.removeSaved();
+            activeUser.removeSavedPaint(paint.id);
+        }
+    }
     return (
         <Container className="p-creation-details">
             <BuyerNavBar />
@@ -70,24 +77,25 @@ function CreationDetailsPage(props) {
                         </Col>
                     </Row>
                     <Row>
-                        <Col md="6">
-                            {creator ? <Row>היוצר:  {creator.userName}</Row> : null}
-                            {paint.creationDate ? <Row>תאריך יצירה: {paint.creationDate}</Row> : null}
-                            <Row>תאריך העלאה לאתר: {paint.createdAt}</Row>
+                        <Col md="4">
+                            {creator ? <Row className="details">היוצר:  {creator.userName}</Row> : null}
+                            {paint.creationDate ? <Row className="details">תאריך יצירה: {paint.creationDate}</Row> : null}
+                            <Row className="details">תאריך העלאה לאתר: {paint.createdAt}</Row>
 
                             {colorsTypes ? 
                             <>
-                                <Row>חומרים: </Row>
+                               
                                 <Row>
-                                    <Col md="4">
+                                    <Col md="3" className="details">חומרים: </Col>
+                                    <Col md="9" >
                                     <ColorTypesView  types={colorsTypes} />
                                     </Col>
                                 </Row>
                             </> : null}
-                            <Row>מחיר: {paint.price}</Row>
-                            {paint.story ? <Row>תמה: {paint.story}</Row> : null}
+                            <Row className="details">מחיר: {paint.price}</Row>
+                            {paint.story ? <Row className="details">תמה: {paint.story}</Row> : null}
                         </Col>
-                        <Col md="6">
+                        <Col md="8">
                             {paint.additionalImg1 || paint.additionalImg2 ? 
                             <Carousel>
                             <Carousel.Item >
@@ -121,7 +129,7 @@ function CreationDetailsPage(props) {
                     <Row>
                         {/* <Button className="en">SMS</Button> */}
                         { creator?<a className="en" href={"mailto:" + creator.email}>Send Email</a> : null}
-                        {!activeUser.savedPaints.includes(paint.id) ? <button onClick={()=>savePaint()} >שמור</button> : null}
+                        {!activeUser.savedPaints.includes(paint.id) ? <button onClick={()=>savePaint()} >שמור</button> : <button onClick={()=>removePaint()} >הסר</button>}
                     </Row>
 
                 </>

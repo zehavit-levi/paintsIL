@@ -37,13 +37,10 @@ export default class UserModel {
         if(parseUserIds){
             let paintsTmp =[];
             if(parseUserIds !== undefined){
-            for(let i=0 ;i < parseUserIds.length;i++){
-                console.log(parseUserIds[i]);
-               query.equalTo("creatorId",parseUserIds[i])
-               const parsePaints = await query.find();
-               const paintsTemp = parsePaints.map(parsePaint => new CreationModel(parsePaint));
-               paintsTmp = paintsTmp.concat(paintsTemp);
-            }}
+            query.containedIn("creatorId",parseUserIds);
+            const parsePaints = await query.find();
+            paintsTmp = parsePaints.map(parsePaint => new CreationModel(parsePaint));
+            }
             return paintsTmp;
         }
         
@@ -55,16 +52,14 @@ export default class UserModel {
         }
         const parsePaints = await query.find();
         console.log(parsePaints.length);
-
-        //const paints = parsePaints.map(parsePaint => new CreationModel(parsePaint));
         
             const parsePaintRandom = [];
             for(let i=0;(parsePaints.length >= 10 && i<10) || i<4;i++){
                 const parseRandom = parsePaints[parsePaints.length * Math.random() | 0];
                 parsePaintRandom === [] || !parsePaintRandom.includes(parseRandom)  ? parsePaintRandom.push(parseRandom) : i--;
             }
-            UserModel.paints = parsePaintRandom.map(parsePaint => new CreationModel(parsePaint));
-            return UserModel.paints;
+            this.paints = parsePaintRandom.map(parsePaint => new CreationModel(parsePaint));
+            return this.paints;
     }
 
     async getSavedPaints() {
@@ -80,6 +75,20 @@ export default class UserModel {
 
     async setSavedPaints(paintId){
         this.savedPaints = this.savedPaints.concat(paintId);
+        const User = Parse.Object.extend('User');
+        const query = new Parse.Query(User);
+        query.get(this.id).then((object) => {
+            object.set('savedPaints',Object.values(this.savedPaints) );
+            object.save().then((response) => {
+              console.log('Updated ', response);
+            }, (error) => {
+              console.error('Error while updating ', error);
+            });
+          });
+    }
+    async removeSavedPaint(paintId){
+        const tmp = Object.values(this.savedPaints).filter(paint => paint !== paintId);
+        this.savedPaints = tmp;
         const User = Parse.Object.extend('User');
         const query = new Parse.Query(User);
         query.get(this.id).then((object) => {

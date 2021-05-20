@@ -49,6 +49,22 @@ export default class CreationModel {
             });
         });
     }
+
+    async removeSaved(){
+        this.saved = this.saved - 1;
+        const Paint = Parse.Object.extend('Paint');
+        const query = new Parse.Query(Paint);
+        query.get(this.id).then((object) => {
+            object.set('saved', this.saved);
+            object.save().then((response) => {
+                console.log('Updated ', response);
+            }, (error) => {
+                console.error('Error while updating ', error);
+            });
+        });
+    }
+
+
     static async getPaint(index){
         const Paint = Parse.Object.extend('Paint');
         const query = new Parse.Query(Paint);
