@@ -19,7 +19,7 @@ function BuyerSavedPaintsPage(props) {
     }, [])
    
     return (
-        <Container>
+        <Container className="p-buyer-saved-paints">
             <BuyerNavBar />
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
