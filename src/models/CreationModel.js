@@ -4,7 +4,8 @@ import UserModel from './UserModel';
 export default class CreationModel {
     constructor(result) {
         this.id = result.id;
-        this.createdAt = JSON.stringify(result.createdAt);
+        const date = new Date(JSON.parse(JSON.stringify(result.createdAt)));
+        this.createdAt = date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear();
         this.name = result.get("name");
         this.img = result.get("img").url();
         if (result.get("additionatImg1")) this.additionalImg1 = result.get("additionatImg1").url();
