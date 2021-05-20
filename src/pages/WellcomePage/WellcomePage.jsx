@@ -12,7 +12,7 @@ function WellcomePage(props) {
             <div className="p-text-content">
                 <MyButton href="/login" text="כניסה" />
                 <p>ברוכים הבאים לאתר</p>
-                <p className="eng">PaintsIL</p>
+                <p className="paint-il">PaintsIL</p>
                 <p>האתר הישראלי לרכישת אומנות ישירות מהאומן, ללא דמי תיווך! </p>
                 <p>בצורה נעימה וללא שטיקים</p>
                 <p>*השירות באתר ניתן לרשומים בלבד</p>
