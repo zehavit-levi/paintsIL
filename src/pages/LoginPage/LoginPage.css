@@ -32,7 +32,7 @@
     border:transparent !important;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 30;
 }
 
 .form-login{
@@ -41,5 +41,7 @@
     padding-top: 0;
 }
 
-  
+.form-label{
+    font-size: 1.2rem;
+}
  
