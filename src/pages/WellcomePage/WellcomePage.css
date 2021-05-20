@@ -19,6 +19,7 @@
 }
 .eng{
     font-family: 'Goblin One', cursive;
+    font-size: 3rem;
 }
 
 .wellcome-bg{
@@ -27,4 +28,11 @@
 .p-wellcome > .signup-buttons{
 display: flex;
 justify-content: center;
+}
+
+p{
+  margin: 20px !important;
+}
+.to-signup{
+  font-size: 1.5rem;
 }

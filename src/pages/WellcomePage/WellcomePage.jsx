@@ -11,12 +11,12 @@ function WellcomePage(props) {
         <Container className="p-wellcome">
             <div className="p-text-content">
                 <MyButton href="/login" text="כניסה" />
-                <h2>ברוכים הבאים לאתר</h2>
-                <h1 className="eng">PaintsIL</h1>
-                <h2>האתר הישראלי לרכישת אומנות ישירות מהאומן, ללא דמי תיווך! </h2>
-                <h1>בצורה נעימה וללא שטיקים</h1>
-                <h4>*השירות באתר ניתן לרשומים בלבד</h4>
-                <h2>להרשמה עליך לבחור</h2>
+                <p>ברוכים הבאים לאתר</p>
+                <p className="eng">PaintsIL</p>
+                <p>האתר הישראלי לרכישת אומנות ישירות מהאומן, ללא דמי תיווך! </p>
+                <p>בצורה נעימה וללא שטיקים</p>
+                <p>*השירות באתר ניתן לרשומים בלבד</p>
+                <p className="to-signup">להרשמה עליך לבחור</p>
                 <div className="signup-buttons">
                     <MyButton href="/signup" onClick={signup} isCreator={true} text="אומן" />
                     <MyButton href="/signup" onClick={signup} isCreator={false} text="קונה" />
