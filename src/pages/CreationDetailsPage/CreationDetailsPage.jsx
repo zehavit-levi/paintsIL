@@ -70,7 +70,7 @@ function CreationDetailsPage(props) {
     }
     return (
         <Container className="p-creation-details">
-            <BuyerNavBar />
+            <BuyerNavBar onLogout={props.onLogout}/>
             {paint ?
                 <>
                     <Row>

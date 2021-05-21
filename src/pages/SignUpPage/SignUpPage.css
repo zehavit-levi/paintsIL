@@ -1,0 +1,13 @@
+.p-signup {
+    width: 60vw;
+    margin: 50px auto; 
+    padding: 20px;
+    font-family: myFirstFont;
+    background: url('../../assets/images/pawel-czerwinski-OG44d93iNJk-unsplash.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: right;
+    direction: rtl;
+}

@@ -7,17 +7,17 @@ export default class UserModel {
         this.fName = parseUser.get("fName");
         this.lName = parseUser.get("lName");
         this.email = parseUser.get("email2");
-        this.phone = parseUser.get("phone");
-        this.colorTypes = parseUser.get("colorsTypes");
-        this.trends = parseUser.get("trends");
-        this.privateOrders = parseUser.get("privateOrders");
-        this.userName = parseUser.get("userName");
-        this.site = parseUser.get("site");
-        this.story = parseUser.get("story");
-        this.occupation = parseUser.get("occupation");
+        if(parseUser.get("phone") !== undefined) this.phone = parseUser.get("phone");
+        if(parseUser.get("colorsTypes") !== undefined)this.colorTypes = parseUser.get("colorsTypes");
+        if(parseUser.get("trends") !== undefined)this.trends = parseUser.get("trends");
+        if(parseUser.get("privateOrders") !== undefined)this.privateOrders = parseUser.get("privateOrders");
+        if(parseUser.get("userName") !== undefined)this.userName = parseUser.get("userName");
+        if(parseUser.get("site") !== undefined)this.site = parseUser.get("site");
+        if(parseUser.get("story") !== undefined)this.story = parseUser.get("story");
+        if(parseUser.get("occupation") !== undefined)this.occupation = parseUser.get("occupation");
         this.isCreator = parseUser.get("isCreator");
-        this.savedPaints = parseUser.get("savedPaints");
-        this.watchedPaints = parseUser.get("watchedPaints");
+        this.savedPaints = parseUser.get("savedPaints") !== undefined ?  parseUser.get("savedPaints") : [];
+        this.watchedPaints = parseUser.get("phone") !== undefined ? parseUser.get("watchedPaints"): [];
 
     }
 
@@ -29,6 +29,33 @@ export default class UserModel {
         UserModel.activeUser = new UserModel(parseUser);
         return UserModel.activeUser;
     }
+
+    static async signup(email, fname, lname, pwd,isCreator) {
+      const user = new Parse.User();
+      if(!isCreator){
+      user.set('username', email);
+      user.set('email', email);
+      user.set('fName', fname);
+      user.set('lName', lname);
+      user.set('password', pwd);
+      user.set('email2', email);
+      user.set('isCreator', false);
+      }
+
+      const parseUser = await user.signUp();
+      UserModel.activeUser = new UserModel(parseUser);
+      return UserModel.activeUser;
+  }
+
+  static logout() {
+    UserModel.activeUser = null;
+    Parse.User.logOut();
+}
+
+  static loadActiveUser() {
+    UserModel.activeUser = Parse.User.current() ? new UserModel(Parse.User.current()) : null;
+    return UserModel.activeUser;
+}
 
     async getPaints(parseUserIds) {
         const Paint = Parse.Object.extend('Paint');

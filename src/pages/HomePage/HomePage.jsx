@@ -6,7 +6,7 @@ import ImgCard from '../../components/ImgCard/ImgCard';
 import BuyerNavBar from '../../components/BuyerNavBar/BuyerNavBar';
 import './HomePage.css';
 
-function HomePage() {
+function HomePage({onLogout}) {
     const [filterText, setFilterText] = useState();
     const [filterBy, setFilterBy] = useState("userName");
     const [filterdPaints, setFilterdPaint] = useState();
@@ -61,7 +61,7 @@ function HomePage() {
 
                 : paints ?
                     <Container>
-                        <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} page="home"/>
+                        <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} page="home" onLogout={onLogout}/>
                         <ResponsiveMasonry
                             columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
                             <Masonry>

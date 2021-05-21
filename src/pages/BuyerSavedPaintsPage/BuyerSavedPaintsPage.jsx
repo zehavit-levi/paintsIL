@@ -20,13 +20,15 @@ function BuyerSavedPaintsPage(props) {
    
     return (
         <Container className="p-buyer-saved-paints">
-            <BuyerNavBar />
+            <BuyerNavBar onLogout={props.onLogout}/>
+            {paintsToShow?
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
                 <Masonry>
-                    {paintsToShow? paintsToShow.map((paint, index) => <ImgCard key={index} paint={paint} index={paint.id} />) : null}
+                   {paintsToShow.map((paint, index) => <ImgCard key={index} paint={paint} index={paint.id} />) }
                 </Masonry>
             </ResponsiveMasonry>
+            : null}
         </Container>
 
 
