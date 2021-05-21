@@ -112,7 +112,7 @@ function CreationDetailsPage(props) {
                         </Col>
                         <Col md="8">
                             {paint.additionalImg1 !== undefined || paint.additionalImg2 !== undefined ?
-                                <Carousel>
+                                <Carousel prevLabel={null} nextLabel={null}>
                                     <Carousel.Item >
                                         <img onClick={() => setShow(true)}
                                             className="d-block w-100"
