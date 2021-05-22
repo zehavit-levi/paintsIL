@@ -57,7 +57,7 @@ function HomePage({onLogout}) {
             {activeUser && activeUser.isCreator && paints ?
 
                 <ResponsiveMasonry
-                    columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+                    columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
                     <Masonry>
                         {paintsShowCreator}
                     </Masonry>
@@ -67,7 +67,7 @@ function HomePage({onLogout}) {
                     <Container>
                         <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} page="home" onLogout={onLogout}/>
                         <ResponsiveMasonry
-                            columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+                            columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
                             <Masonry>
                                 {paintsShowBuyer}
                             </Masonry>

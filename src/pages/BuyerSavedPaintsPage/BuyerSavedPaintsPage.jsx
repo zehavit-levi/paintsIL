@@ -27,7 +27,7 @@ function BuyerSavedPaintsPage(props) {
             <BuyerNavBar onLogout={props.onLogout}/>
             {paintsToShow?
             <ResponsiveMasonry
-                columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+                columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
                 <Masonry>
                    {paintsToShow.map((paint, index) => <ImgCard key={index} paint={paint} index={paint.id} />) }
                 </Masonry>
