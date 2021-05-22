@@ -32,7 +32,7 @@ function BuyerNavBar({ page, setFilterText, filterText, filterBy, setFilterBy, o
                         </Row>
                     </Form> : null}
                 <Nav className="mr-auto">
-                    <Nav.Link href="/" onClick={() => onLogout()}>התנתק</Nav.Link>
+                    <Nav.Link href="#" onClick={() => onLogout()}>התנתק</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
