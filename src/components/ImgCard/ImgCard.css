@@ -2,7 +2,7 @@
     border: outset 5px grey;
 }
 
-img{
+.img-paint{
     width: 100%;
     object-fit: contain;
 }

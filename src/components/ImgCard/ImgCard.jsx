@@ -10,7 +10,7 @@ function ImgCard({paint,index}) {
     return (
         <Card className="img-card" 
             onClick={() => setRedirectTo(index)}>
-            <Image src={paint.img} ></Image>
+            <Image className="img-paint" src={paint.img} ></Image>
         </Card>
     );
 }
