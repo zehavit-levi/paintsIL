@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/paintsIL/static/css/main.58b8eaaf.chunk.css",
-    "main.js": "/paintsIL/static/js/main.04ec643a.chunk.js",
-    "main.js.map": "/paintsIL/static/js/main.04ec643a.chunk.js.map",
+    "main.css": "/paintsIL/static/css/main.4043c0ac.chunk.css",
+    "main.js": "/paintsIL/static/js/main.e51a9035.chunk.js",
+    "main.js.map": "/paintsIL/static/js/main.e51a9035.chunk.js.map",
     "runtime-main.js": "/paintsIL/static/js/runtime-main.854b21d0.js",
     "runtime-main.js.map": "/paintsIL/static/js/runtime-main.854b21d0.js.map",
     "static/css/2.800be05e.chunk.css": "/paintsIL/static/css/2.800be05e.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.19aff15d.chunk.js.map": "/paintsIL/static/js/3.19aff15d.chunk.js.map",
     "index.html": "/paintsIL/index.html",
     "static/css/2.800be05e.chunk.css.map": "/paintsIL/static/css/2.800be05e.chunk.css.map",
-    "static/css/main.58b8eaaf.chunk.css.map": "/paintsIL/static/css/main.58b8eaaf.chunk.css.map",
+    "static/css/main.4043c0ac.chunk.css.map": "/paintsIL/static/css/main.4043c0ac.chunk.css.map",
     "static/js/2.fd8b683c.chunk.js.LICENSE.txt": "/paintsIL/static/js/2.fd8b683c.chunk.js.LICENSE.txt",
     "static/media/ColorTypesView.css": "/paintsIL/static/media/arrow-right-circle.e2e9c73b.svg",
     "static/media/WellcomePage.css": "/paintsIL/static/media/pawel-czerwinski-OG44d93iNJk-unsplash.7e061c73.jpg",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.854b21d0.js",
     "static/css/2.800be05e.chunk.css",
     "static/js/2.fd8b683c.chunk.js",
-    "static/css/main.58b8eaaf.chunk.css",
-    "static/js/main.04ec643a.chunk.js"
+    "static/css/main.4043c0ac.chunk.css",
+    "static/js/main.e51a9035.chunk.js"
   ]
 }
