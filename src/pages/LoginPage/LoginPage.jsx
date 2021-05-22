@@ -35,7 +35,7 @@ function LoginPage({ onLogin}) {
                 <Form className="form-login" onSubmit={login}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label className="eng">Email</Form.Label>
-                        <Form.Control className="eng" type="email" placeholder="Email"
+                        <Form.Control className="eng placeholder" type="email" placeholder="Email"
                             value={email} onChange={e => setEmail(e.target.value)} />
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
