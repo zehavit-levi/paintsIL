@@ -6,14 +6,12 @@
     display: flex;
 }
 .buyer-navbar{
-  font-family: myFirstFont;
+  font-family: myFirstFont,'Goblin One', cursive;;
   text-align: right;
   direction: rtl;
 }
 .eng{
-  font-family: 'Goblin One', cursive;
   font-size: 1.5rem;
-
 }
 .mr-auto{
   font-size: 1.2rem;

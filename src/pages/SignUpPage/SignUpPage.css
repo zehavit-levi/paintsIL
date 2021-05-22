@@ -1,13 +1,26 @@
-.p-signup {
-    width: 60vw;
-    margin: 50px auto; 
-    padding: 20px;
-    font-family: myFirstFont;
-    background: url('../../assets/images/pawel-czerwinski-OG44d93iNJk-unsplash.jpg') no-repeat center center fixed; 
+
+.p-signup{
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.34),0 17px 50px 0 rgba(0,0,0,.19);
+    font-family: myFirstFont,'Goblin One', cursive;;
+    direction: rtl;
+    text-align: right;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    padding: 40px;
+}
+.bg-p-signup{
+    background:url('../../assets/images/pawel-czerwinski-OG44d93iNJk-unsplash.jpg')no-repeat center;
+    height: 100vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    text-align: right;
-    direction: rtl;
+}
+
+.p-signup-title{
+    text-align: center;
+}
+
+.eng.placeholder{
+    font-size: 0.8rem;
 }

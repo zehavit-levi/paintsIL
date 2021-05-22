@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Alert, Button, Form } from 'react-bootstrap';
+import { Alert, Button, Container, Form } from 'react-bootstrap';
 import './SignUpPage.css';
 import Parse from 'parse';
 import UserModel from '../../models/UserModel';
@@ -26,15 +26,16 @@ function SignUpPage({activeUser, onLogin, isCreator}) {
     }
 
     return (
-        <div className="p-signup">
+        <Container className="bg-p-signup">
+            <div className="p-signup col-md-10 col-lg-6">
             {!isCreator ?
             <>
-            <h1 className="eng">PaintIL</h1>
+            <h1 className="eng p-signup-title">PaintIL</h1>
             {showSignupError ? <Alert variant="danger">Error in Sign Up!</Alert> : null}
             <Form onSubmit={signup}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label className="eng">Email</Form.Label>
-                    <Form.Control className="eng" type="email" placeholder="Enter email" 
+                    <Form.Control className="eng placeholder" type="email" placeholder="Enter email" 
                         value={email} onChange={e => setEmail(e.target.value)} />
                 </Form.Group>
 
@@ -60,7 +61,8 @@ function SignUpPage({activeUser, onLogin, isCreator}) {
                     הרשם
                 </Button>
             </Form> </>: <p>is craetor</p>}
-        </div>
+            </div>
+        </Container>
     );
    
 }

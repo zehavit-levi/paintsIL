@@ -5,6 +5,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import ImgCard from '../../components/ImgCard/ImgCard';
 import BuyerNavBar from '../../components/BuyerNavBar/BuyerNavBar';
 import './HomePage.css';
+import { Redirect } from 'react-router';
 
 function HomePage({onLogout}) {
     const [filterText, setFilterText] = useState();
@@ -21,7 +22,7 @@ function HomePage({onLogout}) {
         if (activeUser) {
             fetchData();
         }
-    }, [activeUser])
+    }, [activeUser]);
 
     useEffect(() => {
         async function fetchData() {
@@ -31,8 +32,11 @@ function HomePage({onLogout}) {
         if (activeUser) {
             fetchData();
         }
-    }, [filterText, filterBy, activeUser])
+    }, [filterText, filterBy, activeUser]);
 
+    if (!activeUser) {
+        return <Redirect to="/" />
+    }
 
     const paintsShowCreator = paints ? paints.map(paint => {
         return (

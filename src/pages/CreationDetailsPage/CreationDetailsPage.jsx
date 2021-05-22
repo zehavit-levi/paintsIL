@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Carousel, Col, Container, Image, Modal, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { Redirect, useParams } from 'react-router';
 import BuyerNavBar from '../../components/BuyerNavBar/BuyerNavBar';
 import ColorTypesView from '../../components/ColorTypesView/ColorTypesView';
 import CreationModel from '../../models/CreationModel';
@@ -44,6 +44,10 @@ function CreationDetailsPage(props) {
             getCreator();
         }
     }, [paint]);
+
+    if (!activeUser) {
+        return <Redirect to="/" />
+    }
 
     const savePaint = () => {
         if (!activeUser.savedPaints.includes(paint.id)) {
