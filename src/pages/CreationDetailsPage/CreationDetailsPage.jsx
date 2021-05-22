@@ -110,7 +110,7 @@ function CreationDetailsPage(props) {
                             <Row className="details price">מחיר: {paint.price}</Row>
                             {paint.story ? <Row className="details">תמה: {paint.story}</Row> : null}
                             <Row className="buttons-row">
-                                <Col md="6"> {creator ? <Button size="md" className="eng" href={"mailto:" + creator.email}>Send Email</Button> : null}</Col>
+                                <Col md="6"> {creator ? <Button size="md" className="eng email-send" href={"mailto:" + creator.email}>Send Email</Button> : null}</Col>
                                 <Col md="6"> {<Button size="md" variant={buttonState === "שמור" ? "success" : "danger"} onClick={() => saveOrRemove()} >{buttonState}</Button>}</Col>
                             </Row>
                         </Col>

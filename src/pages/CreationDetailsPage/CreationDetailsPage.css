@@ -8,6 +8,7 @@
 
 .paint{
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .paint-name{
@@ -35,4 +36,8 @@
 }
 .color-types-carusale{
     width: 50% !important;
+}
+
+.eng.email-send{
+    font-size: 1rem;
 }
