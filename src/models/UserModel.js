@@ -17,7 +17,7 @@ export default class UserModel {
         if(parseUser.get("occupation") !== undefined)this.occupation = parseUser.get("occupation");
         this.isCreator = parseUser.get("isCreator");
         this.savedPaints = parseUser.get("savedPaints") !== undefined ?  parseUser.get("savedPaints") : [];
-        this.watchedPaints = parseUser.get("phone") !== undefined ? parseUser.get("watchedPaints"): [];
+        this.watchedPaints = parseUser.get("watchedPaints") !== undefined ? parseUser.get("watchedPaints"): [];
 
     }
 
@@ -57,6 +57,14 @@ export default class UserModel {
     return UserModel.activeUser;
 }
 
+static async getCreator(creatorId){
+    const User = Parse.Object.extend('User');
+    const query = new Parse.Query(User);
+    query.equalTo("objectId", creatorId);
+    const parseUsers = await query.find();
+    const creators = parseUsers.map(parseUser =>  new UserModel(parseUser));
+    return creators[0];
+}
     async getPaints(parseUserIds) {
         const Paint = Parse.Object.extend('Paint');
         const query = new Parse.Query(Paint);
