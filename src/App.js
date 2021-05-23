@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/" ><WellcomePage setIsCreator={setIsCreator}/></Route>
           <Route exact path="/login" component={LoginPage}><LoginPage onLogin={user => setActiveUser(user) } /></Route>
           <Route exact path="/home" ><HomePage onLogout={handleLogout}/></Route>
-          <Route exact path="/creator"><ShowCreatorDetailsPage /></Route>
+          <Route exact path="/creator/:index"><ShowCreatorDetailsPage onLogout={handleLogout}/></Route>
           <Route exact path="/manage"><CreatorManagePage /></Route>
           <Route exact path="/saved"><BuyerSavedPaintsPage onLogout={handleLogout}/></Route>
           <Route exact path="/creation/:index"><CreationDetailsPage onLogout={handleLogout}/></Route>
