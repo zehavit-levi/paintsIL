@@ -6,9 +6,10 @@ import ImgCard from '../../components/ImgCard/ImgCard';
 import BuyerNavBar from '../../components/BuyerNavBar/BuyerNavBar';
 import './HomePage.css';
 import { Redirect } from 'react-router';
+import CreatorNavBar from '../../components/CreatorNavBar/CreatorNavBar';
 
-function HomePage({onLogout}) {
-    const [filterText, setFilterText] = useState();
+function HomePage({ onLogout }) {
+    const [filterText, setFilterText] = useState("");
     const [filterBy, setFilterBy] = useState("userName");
     const [filterdPaints, setFilterdPaint] = useState();
     const [paints, setPaints] = useState([]);
@@ -55,24 +56,25 @@ function HomePage({onLogout}) {
 
         <Container className="p-homepage">
             {activeUser && activeUser.isCreator && paints ?
-
-                <ResponsiveMasonry
-                    columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
-                    <Masonry>
-                        {paintsShowCreator}
-                    </Masonry>
-                </ResponsiveMasonry>
-
+                <>
+                    <CreatorNavBar onLogout={onLogout} />
+                    <ResponsiveMasonry
+                        columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
+                        <Masonry>
+                            {paintsShowCreator}
+                        </Masonry>
+                    </ResponsiveMasonry>
+                </>
                 : paints ?
-                    <Container>
-                        <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} page="home" onLogout={onLogout}/>
+                    <>
+                        <BuyerNavBar filterText={filterText} setFilterText={setFilterText} filterBy={filterBy} setFilterBy={setFilterBy} page="home" onLogout={onLogout} />
                         <ResponsiveMasonry
                             columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
                             <Masonry>
                                 {paintsShowBuyer}
                             </Masonry>
                         </ResponsiveMasonry>
-                    </Container> : null
+                    </> : null
 
             }
         </Container>

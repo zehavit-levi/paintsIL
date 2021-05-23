@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { Alert, Button, Container, Form } from 'react-bootstrap';
 import './SignUpPage.css';
-import Parse from 'parse';
 import UserModel from '../../models/UserModel';
 import { Redirect } from 'react-router';
 

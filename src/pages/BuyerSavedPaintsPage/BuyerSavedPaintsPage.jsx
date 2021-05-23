@@ -17,7 +17,7 @@ function BuyerSavedPaintsPage(props) {
         if (activeUser) {
             fetchData();
         }
-    }, []);
+    }, [activeUser]);
    
     if (!activeUser) {
         return <Redirect to="/" />

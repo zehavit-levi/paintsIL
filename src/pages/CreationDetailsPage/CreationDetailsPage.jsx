@@ -27,7 +27,7 @@ function CreationDetailsPage(props) {
         if (activeUser) {
             fetchData();
         }
-    }, []);
+    }, [activeUser,index]);
 
     useEffect(() => {
         async function getCreator() {

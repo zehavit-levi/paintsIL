@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Nav, Navbar, Row } from 'react-bootstrap';
+import { Form, Nav, Navbar, Row } from 'react-bootstrap';
 import './BuyerNavBar.css'
 
 function BuyerNavBar({ page, setFilterText, filterText, filterBy, setFilterBy, onLogout }) {
