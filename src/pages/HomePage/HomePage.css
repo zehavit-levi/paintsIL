@@ -7,6 +7,14 @@
     border: groove 5px rgba(238, 181, 181,0.7) !important;
     width: 90%;
     object-fit: contain;
+    border: outset 5px grey;
+}
+
+    
+
+.img-paint{
+    width: 100%;
+    object-fit: contain;
 }
 
 .p-homepage{

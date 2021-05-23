@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Carousel, Col, Container, Image, Modal, Row } from 'react-bootstrap';
 import { Redirect, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import BuyerNavBar from '../../components/BuyerNavBar/BuyerNavBar';
 import ColorTypesView from '../../components/ColorTypesView/ColorTypesView';
 import CreationModel from '../../models/CreationModel';
@@ -14,6 +15,7 @@ function CreationDetailsPage(props) {
     const [colorsTypes, setColorTypes] = useState();
     const [show, setShow] = useState(false);
     const [buttonState, setButtonState] = useState();
+    const [redirectTo, setRedirectTo] = useState();
     const activeUser = useContext(ActiveUserContext);
 
     useEffect(() => {
@@ -72,6 +74,10 @@ function CreationDetailsPage(props) {
             setButtonState("שמור");
         }
     }
+
+    if (redirectTo !== undefined) {
+        return <Redirect to={'/creator/' + redirectTo}/>
+    }
     return (
         <Container className="p-creation-details">
             <BuyerNavBar onLogout={props.onLogout}/>
@@ -93,7 +99,7 @@ function CreationDetailsPage(props) {
                     </Row>
                     <Row>
                         <Col md="4">
-                            {creator ? <Row className="details">היוצר:  {creator.userName}</Row> : null}
+                            {creator ? <Row className="details"><Button onClick={() => setRedirectTo(creator.id)}>היוצר:  {creator.userName}</Button></Row> : null}
                             {paint.creationDate ? <Row className="details">תאריך יצירה: {paint.creationDate}</Row> : null}
                             <Row className="details">תאריך העלאה לאתר: {paint.createdAt}</Row>
 
