@@ -1,0 +1,22 @@
+.p-show-creator-details{
+    text-align: right;
+    direction: rtl;
+    font-family: myFirstFont,'Goblin One', cursive;
+    height: 100vh;
+    background-image: linear-gradient(rgba(235, 209, 213,0.5) , rgba(235, 250, 213,0.5) ,rgba(200, 209, 250,0.2) ,white);
+}
+
+.title{
+    text-align: center;
+}
+
+.story-container{
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.34),0 17px 50px 0 rgba(0,0,0,.19);
+    width: 80%;
+    margin-right: 10% !important;
+    margin-left: auto;
+}
+
+.story{
+    padding: 5px;
+}
