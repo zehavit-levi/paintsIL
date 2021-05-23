@@ -41,8 +41,8 @@ function HomePage({ onLogout }) {
 
     const paintsShowCreator = paints ? paints.map(paint => {
         return (
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={paint.img} />
+            <Card className="img-card">
+                <Card.Img variant="top" src={paint.img} className="img-paint" />
             </Card>
         )
     }) : null;
