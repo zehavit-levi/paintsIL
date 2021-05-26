@@ -1,11 +1,8 @@
 .carouselContainer{
     width: 100%;
 }
-h4{
-    color:black;
-    position:absolute;
-    font-size: 1rem;
-    
+.caption{
+    color:black !important;    
 }
 img.carouselImg{
     width:100%;
@@ -31,4 +28,8 @@ img.carouselImg{
     content: none;
     background-image: none;
     color: teal;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    width: 25% !important;
 }

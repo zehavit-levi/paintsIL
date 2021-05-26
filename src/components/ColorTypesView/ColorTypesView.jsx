@@ -11,8 +11,8 @@ function ColorTypesView(props) {
                     alt="First slide"
 
                 />
-                <Carousel.Caption style={{ position: "relative" }}>
-                    <h4>{colorType.name}</h4>
+                <Carousel.Caption className="caption">
+                   {colorType.name}
                 </Carousel.Caption>
             </Carousel.Item>
         )

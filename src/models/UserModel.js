@@ -1,4 +1,5 @@
 import Parse from 'parse';
+import ColorType from './ColorType';
 import CreationModel from './CreationModel';
 export default class UserModel {
     #parseUser
@@ -8,7 +9,7 @@ export default class UserModel {
         this.lName = parseUser.get("lName");
         this.email = parseUser.get("email2");
         if(parseUser.get("phone") !== undefined) this.phone = parseUser.get("phone");
-        if(parseUser.get("colorsTypes") !== undefined)this.colorTypes = parseUser.get("colorsTypes");
+        this.colorsTypes = parseUser.get("colorsTypes") !== undefined ? parseUser.get("colorsTypes"):[];
         if(parseUser.get("trends") !== undefined)this.trends = parseUser.get("trends");
         if(parseUser.get("privateOrders") !== undefined)this.privateOrders = parseUser.get("privateOrders");
         if(parseUser.get("userName") !== undefined)this.userName = parseUser.get("userName");
@@ -169,4 +170,14 @@ static async getCreator(creatorId){
         }
         return UserModel.paints;
     }
+
+    static async getColorsTypes(colorsTypes){
+      const colorType = Parse.Object.extend('colorType');
+      const query = new Parse.Query(colorType);
+      console.log(colorsTypes);
+      query.containedIn("objectId",Object.values(colorsTypes));
+      const parseColorsTypes = await query.find();
+      const types = parseColorsTypes.map(type => new ColorType(type));
+      return types;
+  }
 }
