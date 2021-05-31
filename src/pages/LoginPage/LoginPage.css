@@ -4,8 +4,8 @@
     direction: rtl;
     text-align: right;
     border-radius: 0.5rem;
-    margin: 0 auto;
-    padding: 40px;
+    padding: 10%;
+    height: 90vh;
 }
 .bg-p-login{
     background:url('../../assets/images/pexels-deeana-creates-1646953.jpg')no-repeat center;
@@ -25,18 +25,20 @@
     color: black !important;
     border:transparent !important;
     position: absolute;
-    left: 0;
-    bottom: 30;
+    left: 30%;
+    bottom: 15% ;
 }
 
 .form-login{
     position: relative;
-    padding: 40px;
+    width: 90%;
+    height: 90%;
     padding-top: 0;
 }
 
 .form-label{
     font-size: 1.2rem;
+    margin-top: 0.5rem;
 }
  
 .eng.placeholder{

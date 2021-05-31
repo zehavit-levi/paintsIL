@@ -45,8 +45,9 @@ function LoginPage({ onLogin}) {
                     </Form.Group>
                     <Button className="submit-btn-login" type="submit" block>
                     כניסה
-                </Button>
+                    </Button>
                 </Form>
+                
             </div>
         </Container>
     );
