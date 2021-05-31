@@ -5,7 +5,8 @@
 margin:10px;
     border: groove 5px rgba(238, 181, 181,0.7) !important;
     width: 90%;
-    object-fit: contain;
+    height: 90%;
+    /* object-fit: contain; */
     border: outset 5px grey;
 }
 .p-buyer-saved-paints .img-card:hover{
@@ -14,5 +15,6 @@ margin:10px;
 
 .p-buyer-saved-paints .img-paint{
     width: 100%;
-    object-fit: contain;
+    height: 100% ;
+    /* object-fit: contain; */
 }
