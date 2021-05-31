@@ -2,3 +2,10 @@
     height: 100vh;
     background-image: linear-gradient(rgba(235, 209, 213,0.5) , rgba(235, 250, 213,0.5) ,rgba(200, 209, 250,0.2) ,white);
 }
+.p-buyer-saved-paints .img-card{
+margin:10px;
+    border: groove 5px rgba(238, 181, 181,0.7) !important;
+    width: 90%;
+    object-fit: contain;
+    border: outset 5px grey;
+}
