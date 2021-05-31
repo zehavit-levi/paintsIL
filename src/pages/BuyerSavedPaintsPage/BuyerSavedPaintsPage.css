@@ -11,3 +11,8 @@ margin:10px;
 .p-buyer-saved-paints .img-card:hover{
     cursor: grab;
 }
+
+.p-buyer-saved-paints .img-paint{
+    width: 100%;
+    object-fit: contain;
+}
