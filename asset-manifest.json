@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/paintsIL/static/css/main.3c5f2ff9.chunk.css",
+    "main.css": "/paintsIL/static/css/main.67d9920f.chunk.css",
     "main.js": "/paintsIL/static/js/main.1ad6d3f5.chunk.js",
     "main.js.map": "/paintsIL/static/js/main.1ad6d3f5.chunk.js.map",
     "runtime-main.js": "/paintsIL/static/js/runtime-main.d0b55ba5.js",
@@ -12,7 +12,7 @@
     "static/js/3.2bd01dcf.chunk.js.map": "/paintsIL/static/js/3.2bd01dcf.chunk.js.map",
     "index.html": "/paintsIL/index.html",
     "static/css/2.800be05e.chunk.css.map": "/paintsIL/static/css/2.800be05e.chunk.css.map",
-    "static/css/main.3c5f2ff9.chunk.css.map": "/paintsIL/static/css/main.3c5f2ff9.chunk.css.map",
+    "static/css/main.67d9920f.chunk.css.map": "/paintsIL/static/css/main.67d9920f.chunk.css.map",
     "static/js/2.ffddb006.chunk.js.LICENSE.txt": "/paintsIL/static/js/2.ffddb006.chunk.js.LICENSE.txt",
     "static/media/ColorTypesView.css": "/paintsIL/static/media/arrow-right-circle.e2e9c73b.svg",
     "static/media/WellcomePage.css": "/paintsIL/static/media/pawel-czerwinski-OG44d93iNJk-unsplash.7e061c73.jpg",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.d0b55ba5.js",
     "static/css/2.800be05e.chunk.css",
     "static/js/2.ffddb006.chunk.js",
-    "static/css/main.3c5f2ff9.chunk.css",
+    "static/css/main.67d9920f.chunk.css",
     "static/js/main.1ad6d3f5.chunk.js"
   ]
 }
