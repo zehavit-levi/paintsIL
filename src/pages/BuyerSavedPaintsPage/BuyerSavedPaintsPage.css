@@ -9,3 +9,6 @@ margin:10px;
     object-fit: contain;
     border: outset 5px grey;
 }
+.p-buyer-saved-paints .img-card:hover{
+    cursor: grab;
+}

@@ -29,7 +29,7 @@ function BuyerSavedPaintsPage(props) {
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
                 <Masonry>
-                   {paintsToShow.map((paint, index) => <ImgCard key={index} paint={paint} index={paint.id} />) }
+                   {paintsToShow.map((paint, index) => <ImgCard className="img-card" key={index} paint={paint} index={paint.id} />) }
                 </Masonry>
             </ResponsiveMasonry>
             : null}
