@@ -17,10 +17,10 @@
     background-size: cover;
 }
 
-.p-signup-title{
+.p-signup .p-signup-title{
     text-align: center;
 }
 
-.eng.placeholder{
+.p-signup .eng.placeholder{
     font-size: 0.8rem;
 }

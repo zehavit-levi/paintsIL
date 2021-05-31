@@ -6,38 +6,38 @@
     background-image: linear-gradient(rgba(235, 209, 213,0.5) , rgba(235, 250, 213,0.5) ,rgba(200, 209, 250,0.2) ,white);
 }
 
-.paint{
+.p-creation-details .paint , .modal-body > .paint{
     width: 100%;
     margin-bottom: 10px;
 }
 
-.paint-name{
+.p-creation-details .paint-name{
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-.details{
+.p-creation-details .details{
     padding: 10px;
     font-size: 1.2rem;
 }
 
-.buttons-row{
+.p-creation-details .buttons-row{
     padding: 10px;
 }
-.btn {
+.p-creation-details .btn {
     margin: 5px !important;
 }
 
-.price{
+.p-creation-details .price{
     font-size: 1.4rem;
     color: tomato;
     padding-right: 40%;
     margin-top: 30px !important;
 }
-.color-types-carusale{
+.p-creation-details .color-types-carusale{
     width: 50% !important;
 }
 
-.eng.email-send{
+.p-creation-details .eng.email-send{
     font-size: 1rem;
 }

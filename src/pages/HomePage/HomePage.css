@@ -1,8 +1,8 @@
 
-.img-card:hover{
+.p-homepage .img-card:hover{
     cursor: grab;
 }
-.img-card{
+.p-homepage .img-card{
     margin:10px;
     border: groove 5px rgba(238, 181, 181,0.7) !important;
     width: 90%;
@@ -12,7 +12,7 @@
 
     
 
-.img-paint{
+.p-homepage .img-paint{
     width: 100%;
     object-fit: contain;
 }

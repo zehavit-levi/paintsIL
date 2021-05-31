@@ -16,31 +16,32 @@
     background-size: cover;
 }
 
-.p-login-title{
+.p-login .p-login-title{
     text-align: center;
 }
 
-.submit-btn-login{
+.p-login .submit-btn-login{
     background-image: radial-gradient(pink, white);
     color: black !important;
     border:transparent !important;
-    position: absolute;
-    left: 30%;
-    bottom: 20% ;
+    margin-top: 20px;
 }
 
-.form-login{
-    position: relative;
+.p-login .form-login{
     width: 90%;
     height: 90%;
     padding-top: 0;
 }
 
-.form-label{
+.p-login .form-label{
     font-size: 1.2rem;
     margin-top: 0.5rem;
 }
  
-.eng.placeholder{
+.p-login .eng.placeholder{
+    font-size: 0.8rem;
+}
+
+.p-login .alert{
     font-size: 0.8rem;
 }

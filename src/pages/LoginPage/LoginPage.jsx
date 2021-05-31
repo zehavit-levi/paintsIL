@@ -31,7 +31,7 @@ function LoginPage({ onLogin}) {
             <div className="p-login col-md-10 col-lg-6">
                 <h1 className="p-login-title">כניסה לאתר</h1>
                 <p className="p-login-title">או <Link to="/">הרשמה לאתר</Link></p>
-                {showInvalidLogin ? <Alert variant="danger">Invalid Credentials!</Alert> : null}
+                {showInvalidLogin ? <Alert variant="danger">שם משתמש או סיסמה שגוי/ה!</Alert> : null}
                 <Form className="form-login" onSubmit={login}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label className="eng">Email</Form.Label>
